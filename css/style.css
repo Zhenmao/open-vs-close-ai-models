@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: currentColor;
+}
+
+svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+:root {
+  --font-size-9xl: 9.313rem;
+  --font-size-8xl: 7.451rem;
+  --font-size-7xl: 5.96rem;
+  --font-size-6xl: 4.768rem;
+  --font-size-5xl: 3.815rem;
+  --font-size-4xl: 3.052rem;
+  --font-size-3xl: 2.441rem;
+  --font-size-2xl: 1.953rem;
+  --font-size-xl: 1.563rem;
+  --font-size-lg: 1.25rem;
+  --font-size-md: 1rem;
+  --font-size-sm: 0.8rem;
+  --font-size-xs: 0.64rem;
+
+  --font-size-vis-lg: 18px;
+  --font-size-vis-md: 16px;
+  --font-size-vis-sm: 14px;
+  --font-size-vis-xs: 12px;
+
+  --font-family: "Figtree", sans-serif;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  --line-height-title: 1.1;
+  --line-height-body: 1.5;
+
+  --color-background: #dae4ef;
+  --color-text-accent: #1c305e;
+  --color-text: #3b3b3b;
+  --color-grid: #ffffff;
+
+  --color-open: #acdac7;
+  --color-open-light: #cce8db;
+  --color-open-dark: #6c8a7e;
+  --color-closed: #f6bba2;
+  --color-closed-light: #ffe8da;
+  --color-closed-dark: #cc763c;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+h1 {
+  color: var(--color-text-accent);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-title);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+@media (width >= 48rem) {
+  h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+h1 span {
+  color: var(--color-category);
+}
+
+.open {
+  --color-category: var(--color-open-dark);
+}
+
+.closed {
+  --color-category: var(--color-closed-dark);
+}
+
+hgroup p {
+  font-size: var(--font-size-lg);
+  text-wrap: pretty;
+}
+
+footer {
+  color: var(--color-text-muted);
+}
+
+main {
+  margin-block: 4rem;
+}
+
+article {
+  width: min(100% - 2rem, 75rem);
+  margin-inline: auto;
+  display: grid;
+  gap: 4rem;
+}
+
+.chart {
+  position: relative;
+  font-size: var(--font-size-vis-md);
+}
+
+.chart text {
+  user-select: none;
+}
+
+.chart .is-sticky {
+  position: sticky;
+  background-color: var(--color-background);
+}
+
+.chart .is-sticky[data-sticky-side="top"] {
+  top: 0;
+}
+
+.chart .is-sticky[data-sticky-side="bottom"] {
+  bottom: 0;
+}
+
+.chart .axis__title {
+  font-weight: var(--font-weight-bold);
+}
+
+.chart .tick {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--font-size-vis-sm);
+}
+
+.chart .axis line {
+  stroke: var(--color-grid);
+}
+
+.chart .area {
+  fill: var(--color-category);
+  fill-opacity: 0.5;
+}
+
+.chart .area[data-color="closed"] {
+  --color-category: var(--color-closed);
+}
+
+.chart .area[data-color="open"] {
+  --color-category: var(--color-open);
+}
+
+.chart .line {
+  stroke: var(--color-category);
+  stroke-width: 2px;
+}
+
+.chart .line[data-color="closed"] {
+  --color-category: var(--color-closed-dark);
+}
+
+.chart .line[data-color="open"] {
+  --color-category: var(--color-open-dark);
+}
+
+.chart .point__circle {
+  fill: var(--color-category);
+}
+
+.chart .point__circle[data-color="closed"] {
+  --color-category: var(--color-closed-dark);
+}
+
+.chart .point__circle[data-color="open"] {
+  --color-category: var(--color-open-dark);
+}
+
+.chart .point__label {
+  cursor: default;
+  color: var(--color-text-accent);
+}
+
+.tooltip {
+  font-size: var(--font-size-sm);
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-background);
+  border-radius: 0.25em;
+  padding: 0.5em 1em 0.75em;
+  border: 1px solid var(--color-grid);
+  display: grid;
+  gap: 0.5em;
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    visibility 0.15s,
+    opacity 0.15s;
+}
+
+.tooltip.is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.tooltip__entries {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.tooltip__value {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-threshold);
+  padding-inline: 0.5em;
+  border-radius: calc(infinity * 1px);
+}

@@ -1,0 +1,47 @@
+Category,Date,Model Name,Model URL,Score,Region
+Closed leaders,2020-06,GPT-3 davinci (API base model),/model/gpt-3-davinci,31.6,US
+Closed leaders,2021-08,Codex code-davinci-001,/model/code-davinci-001,32.8,US
+Closed leaders,2022-01,GPT-3 text-davinci-001,/model/text-davinci-001,33.9,US
+Closed leaders,2022-03,Codex code-davinci-002 (GPT-3.5 base),/model/code-davinci-002,47.3,US
+Closed leaders,2023-03,GPT-4 (0314),/model/gpt-4-0314,53.9,US
+Closed leaders,2023-11,GPT-4 Turbo Preview (1106),/model/gpt-4-1106-preview,55,US
+Closed leaders,2024-04,GPT-4 Turbo (2024-04-09),/model/gpt-4-turbo-2024-04-09,56.5,US
+Closed leaders,2024-05,GPT-4o (2024-05-13),/model/gpt-4o-2024-05-13,58,US
+Closed leaders,2024-08,GPT-4o (2024-08-06),/model/gpt-4o-2024-08-06,58.3,US
+Closed leaders,2024-09,o1-preview,/model/o1-preview,63.5,US
+Closed leaders,2024-12,o1 (2024-12-17),/model/o1-2024-12-17,66.1,US
+Closed leaders,2025-03,Gemini 2.5 Pro Experimental (03-25),/model/gemini-2-5-pro-exp-03-25,67.8,US
+Closed leaders,2025-04,o3,/model/o3,68.8,US
+Closed leaders,2025-06,o3-pro,/model/o3-pro,69.9,US
+Closed leaders,2025-08,GPT-5,/model/gpt-5,71.7,US
+Closed leaders,2025-10,GPT-5 Pro,/model/gpt-5-pro,71.9,US
+Closed leaders,2025-12,GPT-5.2 Pro,/model/gpt-5-2-pro,75.9,US
+Closed leaders,2026-03,GPT-5.4 Pro,/model/gpt-5-4-pro,79.4,US
+Closed leaders,2026-04,GPT-5.5 Pro,/model/gpt-5-5-pro,80.7,US
+Closed leaders,2026-07,Claude Opus 5,/model/claude-opus-5,81.2,US
+Closed leaders,2026-09,GPT-6 Astra,/model/gpt-6-astra,85.6,US
+Open-weights leaders,2020-06,T5 Large,/model/t5-large,16.8,US
+Open-weights leaders,2021-03,GPT-Neo 2.7B,/model/gpt-neo-2-7b,18,international
+Open-weights leaders,2021-06,GPT-J 6B,/model/gpt-j-6b,24.6,international
+Open-weights leaders,2021-10,T0 11B,/model/t0,34.6,international
+Open-weights leaders,2022-10,Flan-T5 XXL,/model/flan-t5-xxl,39.1,US
+Open-weights leaders,2023-02,LLaMA 65B,/model/llama-65b,40,US
+Open-weights leaders,2023-03,Flan-UL2 20B,/model/flan-ul2,47.8,US
+Open-weights leaders,2023-08,Phind CodeLlama 34B v2,/model/phind-codellama-34b-v2,48.2,US
+Open-weights leaders,2023-10,speechless-codellama-34b-v2.0,/model/speechless-codellama-34b-v2-0,50.4,China
+Open-weights leaders,2023-11,DeepSeek-Coder 33B Instruct,/model/deepseek-coder-33b-instruct,51.3,China
+Open-weights leaders,2024-02,OpenCodeInterpreter-DS-33B,/model/opencodeinterpreter-ds-33b,51.6,international
+Open-weights leaders,2024-04,CodeQwen1.5 7B Chat,/model/codeqwen1-5-7b-chat,51.7,China
+Open-weights leaders,2024-05,Llama-3-Instruct-8B-SimPO,/model/llama-3-instruct-8b-simpo,52.1,US
+Open-weights leaders,2024-06,DeepSeek-Coder-V2 Instruct (0614),/model/deepseek-coder-v2,54.2,China
+Open-weights leaders,2024-07,Gemma 2 9B IT SimPO,/model/gemma-2-9b-simpo,60.1,US
+Open-weights leaders,2025-01,DeepSeek R1 (Jan '25),/model/deepseek-r1,63.5,China
+Open-weights leaders,2025-05,DeepSeek R1 0528,/model/deepseek-r1-0528,65.1,China
+Open-weights leaders,2025-07,Qwen3 235B-A22B Thinking 2507,/model/qwen3-235b-a22b-thinking-2507,66.1,China
+Open-weights leaders,2025-09,LongCat-Flash-Thinking (560B-A27B),/model/longcat-flash-thinking,68.1,China
+Open-weights leaders,2026-01,Kimi K2.5,/model/kimi-k2-5,69.2,China
+Open-weights leaders,2026-02,Qwen3.5 397B-A17B,/model/qwen3-5-397b-a17b,69.8,China
+Open-weights leaders,2026-04,Kimi K2.6,/model/kimi-k2-6,71.9,China
+Open-weights leaders,2026-06,GLM-5.2,/model/glm-5-2,72.6,China
+Open-weights leaders,2026-07,Kimi K3,/model/kimi-k3,76,China
+Open-weights leaders,2026-08,Hy4 preview (770B-A49B),/model/hy4-preview,77.7,China
