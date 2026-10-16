@@ -43,6 +43,7 @@ svg {
   --font-size-vis-xs: 12px;
 
   --font-family: "Figtree", sans-serif;
+  --font-family-annotation: "Shantell Sans", cursive;
 
   --font-weight-normal: 400;
   --font-weight-bold: 700;
@@ -196,6 +197,32 @@ article {
 .chart .point__label {
   cursor: default;
   color: var(--color-text-accent);
+}
+
+.chart .annotation__arrow {
+  stroke: var(--color-category);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart .annotation__label {
+  font-family: var(--font-family-annotation);
+  font-weight: var(--font-weight-bold);
+  fill: var(--color-category);
+  stroke: var(--color-background);
+  stroke-width: 4px;
+  paint-order: stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart .annotation[data-color="closed"] {
+  --color-category: var(--color-closed-dark);
+}
+
+.chart .annotation[data-color="open"] {
+  --color-category: var(--color-open-dark);
 }
 
 .tooltip {

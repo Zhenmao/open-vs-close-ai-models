@@ -130,6 +130,7 @@ d3.csv("data/data.csv").then((data) => {
   const yDifferenceYAxisG = svg.append("g").attr("class", "axis");
   const linesG = svg.append("g").attr("class", "lines");
   const pointsG = svg.append("g").attr("class", "points");
+  const annotationsG = svg.append("g").attr("class", "annotations");
   const bottomSvg = container
     .append("svg")
     .attr("class", "is-sticky")
@@ -168,6 +169,7 @@ d3.csv("data/data.csv").then((data) => {
     renderYAxis();
     renderDifference();
     renderPoints();
+    renderAnnotations();
   }
 
   function renderTopXAxis() {
@@ -395,5 +397,80 @@ d3.csv("data/data.csv").then((data) => {
       .attr("cx", (d) => xScale(accessors.score(d)));
 
     pointG.select(".point__label").attr("x", (d) => xScale(accessors.score(d)));
+  }
+
+  function renderAnnotations() {
+    const annotationWidth = 46;
+    const annotationHeight = 38;
+
+    const annotations = [
+      {
+        transX: accessors.score(grouped.get("Open-weights leaders")[0]),
+        transY: d3.utcMonth.offset(yMin, 2),
+        xOffset: -annotationWidth,
+        yOffset: 0,
+        color: colorScale("Open-weights leaders"),
+        arrowPaths: ["M6 32 C16 30 28 18 40 6", "M30 10 L40 6 L36 16"],
+        textAnchor: "middle",
+        xText: 0,
+        yText: annotationHeight + 8,
+        text: "Open-weights models",
+      },
+      {
+        transX: accessors.score(grouped.get("Closed leaders")[0]),
+        transY: d3.utcMonth.offset(yMin, 2),
+        xOffset: 0,
+        yOffset: 0,
+        color: colorScale("Closed leaders"),
+        arrowPaths: ["M40 32 C30 30 18 18 6 6", "M16 10 L6 6 L10 16"],
+        textAnchor: "middle",
+        xText: annotationWidth,
+        yText: annotationHeight + 12,
+        text: "Closed models",
+      },
+    ];
+
+    annotationsG
+      .selectChildren(".annotation")
+      .data(annotations)
+      .join((enter) =>
+        enter
+          .append("g")
+          .attr("class", "annotation")
+          .attr("data-color", (d) => d.color)
+          .call((g) =>
+            g
+              .append("g")
+              .attr("class", "annotation__arrow")
+              .attr("fill", "none")
+              .selectChildren()
+              .data((d) => d.arrowPaths)
+              .join("path")
+              .attr("d", (d) => d),
+          )
+          .call((g) =>
+            g
+              .append("text")
+              .attr("class", "annotation__label")
+              .attr("text-anchor", (d) => d.textAnchor)
+              .attr("transform", "rotate(-4)")
+              .selectChildren("tspan")
+              .data((d) => d.text.split(" "))
+              .join("tspan")
+              .text((d) => d)
+              .each(function (_, i) {
+                const d = d3.select(this.parentNode).datum();
+                d3.select(this)
+                  .attr("x", d.xText)
+                  .attr("y", d.yText)
+                  .attr("dy", i * 1.1 + "em");
+              }),
+          ),
+      )
+      .attr(
+        "transform",
+        (d) =>
+          `translate(${xScale(d.transX) + d.xOffset},${yScale(d.transY) + d.yOffset})`,
+      );
   }
 });
